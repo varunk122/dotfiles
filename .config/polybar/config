@@ -64,7 +64,7 @@ tray-position = left
 
 modules-left = workspaces xkbstates xkillapp settings appfilemanager mediaplayer
 modules-center = date media
-modules-right = layout temperature memory memoryswap cpu battery brightness sound wifi powermenu
+modules-right = layout temperature memory memoryswap cpu battery brightness sound wifi speedtest powermenu
 
 
 ;Date correction
@@ -391,3 +391,13 @@ ramp-3 = 
 ramp-4 = 
 ramp-font = 7
 ramp-foreground = ${colors.menucol-deepblue}
+
+;speedtest
+[module/speedtest]
+type = custom/script
+exec-if = hash speedtest
+format-padding = 2
+format-underline = ${colors.menucol-orange}
+format-foreground = ${colors.menucol-orange}
+exec = "$HOME/.config/polybar/polybar-speedtest"
+interval = 15

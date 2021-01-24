@@ -113,7 +113,7 @@ source ~/ros/rotors_ws/devel/setup.bash
 
 source ~/ros/landing_ws/devel/setup.bash
 
-#source ~/ros/iarc_ws/devel/setup.bash
+source ~/ros/iarc_ws/devel/setup.bash
 
 export GAZEBO_PLUGIN_PATH=~/ros/ros_ws/src/Firmware/build/px4_sitl_default/build_gazebo:$GAZEBO_PLUGIN_PATH
 
@@ -162,3 +162,6 @@ export EDITOR=vim
 
 #git bare repository for managing dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
+
+

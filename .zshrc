@@ -16,33 +16,33 @@ export ZSH="/home/varun/.oh-my-zsh"
 
 # -----------------------------ros-start-----------------------------------------
 
-source /opt/ros/melodic/setup.zsh
+#source /opt/ros/melodic/setup.zsh
 
-source ~/ros/tutorial_ws/devel/setup.zsh
+#source ~/ros/tutorial_ws/devel/setup.zsh
 
-source ~/ros/rotors_ws/devel/setup.zsh
+#source ~/ros/rotors_ws/devel/setup.zsh
 
 #source ~/ros/new_ws/devel/setup.zsh
 
-source ~/ros/project_ws/devel/setup.zsh
+#source ~/ros/project_ws/devel/setup.zsh
 
-source ~/ros/landing_ws/devel/setup.zsh
+#source ~/ros/landing_ws/devel/setup.zsh
 
-source ~/ros/iarc_ws/devel/setup.zsh
+#source ~/ros/iarc_ws/devel/setup.zsh
 
 #source ~/ros_ws/src/Firmware/Tools/setup_gazebo.bash ~/ros_ws/src/Firmware ~/ros_ws/src/Firmware/build/px4_sitl_default > /dev/null
 #export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/ros_ws/src/Firmware
 #export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/ros_ws/src/Firmware/Tools/sitl_gazebo
 
 
-export GAZEBO_PLUGIN_PATH=~/ros/ros_ws/src/Firmware/build/px4_sitl_default/build_gazebo:$GAZEBO_PLUGIN_PATH
+#export GAZEBO_PLUGIN_PATH=~/ros/ros_ws/src/Firmware/build/px4_sitl_default/build_gazebo:$GAZEBO_PLUGIN_PATH
 
-export HUSKY_GAZEBO_DESCRIPTION=$(rospack find husky_gazebo)/urdf/description.gazebo.xacro
+#export HUSKY_GAZEBO_DESCRIPTION=$(rospack find husky_gazebo)/urdf/description.gazebo.xacro
 
-export GAZEBO_MODEL_PATH=/home/varun/ros/ros_ws/src/Firmware/Tools/sitl_gazebo/models:$GAZEBO_MODEL_PATH
+#export GAZEBO_MODEL_PATH=/home/varun/ros/ros_ws/src/Firmware/Tools/sitl_gazebo/models:$GAZEBO_MODEL_PATH
 
-source ~/ros/rotors_ws/devel/setup.zsh
-source ~/ros/pet_ws/devel/setup.zsh
+#source ~/ros/rotors_ws/devel/setup.zsh
+#source ~/ros/pet_ws/devel/setup.zsh
 
 
 # Install Ruby Gems to ~/gems

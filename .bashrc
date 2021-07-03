@@ -1,4 +1,5 @@
 source ~/.bash_profile
+source ~/.profile
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -50,17 +51,18 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+#debian_chroot="~"
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]impulse\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\W\$ '
 fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \W\a\]$PS1"
     ;;
 *)
     ;;
@@ -103,27 +105,26 @@ fi
 
 source /opt/ros/melodic/setup.bash
 
-source ~/ros/tutorial_ws/devel/setup.bash
+source ~/ros/rotors_simulator_ws/devel/setup.bash
+#source ~/ros/tutorial_ws/devel/setup.bash
 
-source ~/ros/rotors_ws/devel/setup.bash
+#source ~/ros/rotors_ws/devel/setup.bash
 
 #source ~/ros/new_ws/devel/setup.bash
 
 #source ~/ros/project_ws/devel/setup.bash
 
-source ~/ros/landing_ws/devel/setup.bash
+#source ~/ros/landing_ws/devel/setup.bash
 
-source ~/ros/iarc_ws/devel/setup.bash
+#source ~/ros/iarc_ws/devel/setup.bash
 
-export GAZEBO_PLUGIN_PATH=~/ros/ros_ws/src/Firmware/build/px4_sitl_default/build_gazebo:$GAZEBO_PLUGIN_PATH
+#export GAZEBO_PLUGIN_PATH=~/ros/ros_ws/src/Firmware/build/px4_sitl_default/build_gazebo:/opt/ros/melodic/lib:$GAZEBO_PLUGIN_PATH
 
-export HUSKY_GAZEBO_DESCRIPTION=$(rospack find husky_gazebo)/urdf/description.gazebo.xacro
+#export HUSKY_GAZEBO_DESCRIPTION=$(rospack find husky_gazebo)/urdf/description.gazebo.xacro
 
-export GAZEBO_MODEL_PATH=/home/varun/ros/ros_ws/src/Firmware/Tools/sitl_gazebo/models:/home/varun/ros/iarc_ws/src/iarc_simulation_tools/iarc_simulation_tools/models/:$GAZEBO_MODEL_PATH
-
-source ~/ros/rotors_ws/devel/setup.bash
+#export GAZEBO_MODEL_PATH=/home/varun/ros/ros_ws/src/Firmware/Tools/sitl_gazebo/models:/home/varun/ros/iarc_ws/src/iarc_simulation_tools/iarc_simulation_tools/models/:$GAZEBO_MODEL_PATH
+#source ~/ros/rotors_ws/devel/setup.bash
 #source ~/ros/asv_ws/devel/setup.bash
-source ~/ros/mpc_ws/devel/setup.bash
 #source ~/ros/pet_ws/devel/setup.bash
 
 #source ~/ros/ros_ws/devel/setup.bash
@@ -133,29 +134,29 @@ source ~/ros/mpc_ws/devel/setup.bash
 
 # Install Ruby Gems to ~/gems
 # Install Ruby Gems to ~/gems
-export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
+#export GEM_HOME="$HOME/gems"
+#export PATH="$HOME/gems/bin:$PATH"
 
 
 # Install Ruby Gems to ~/gems
-export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
+#export GEM_HOME="$HOME/gems"
+#export PATH="$HOME/gems/bin:$PATH"
 
 
 #cat ~/.cache/wal/sequences
     #(pywal)
-export LC_ALL="en_US.UTF-8"
+#export LC_ALL="en_US.UTF-8"
  
 
-neofetch > /dev/null
+#neofetch > /dev/null
 
-function _update_ps1() {
-    PS1=$(powerline-shell $?)
-}
+#function _update_ps1() {
+ #   PS1=$(powerline-shell $?)
+#}
 
-if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
+#if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
+ #   PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+#fi
 
 export EDITOR=vim
 
@@ -163,5 +164,28 @@ export EDITOR=vim
 #git bare repository for managing dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
+source ~/ros/mpc_ws/devel/setup.bash
+source ~/ros/tracking_ws/devel/setup.bash
 
 
+# export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/ros/rotors_simulator_ws/src/rotors_simulator/rotors_gazebo
+
+#source /home/varun/alacritty/extra/completions/alacritty.bash
+#export PATH=$PATH:$HOME/ros/drdo_ws/src/ardupilot/Tools/autotest
+#export PATH=/usr/lib/ccache:$PATH
+#source ~/ros/drdo_ws/devel/setup.bash
+#source ~/ros/catkin_ws/devel/setup.bash
+#source ~/ros/rotors_ws/devel/setup.bash
+#source ~/ros/planning_ws/devel/setup.bash
+#source ~/ros/varun_ws/devel/setup.bash
+export PATH=$PATH:/home/varun/Documents/qgc
+alias qgc=QGroundControl.AppImage 
+
+#source ~/ros/firmware_ws/src/PX4-Autopilot/Tools/setup_gazebo.bash ~/ros/firmware_ws/src/PX4-Autopilot ~/ros/firmware_ws/src/PX4-Autopilot/build/px4_sitl_default > /dev/null
+#export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/ros/firmware_ws/src/PX4-Autopilot            
+#export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/ros/firmware_ws/src/PX4-Autopilot/Tools/sitl_gazebo
+
+
+#starship
+
+eval "$(starship init bash)"
